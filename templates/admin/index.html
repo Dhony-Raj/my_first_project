@@ -251,6 +251,13 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Customer Entry</h4>
+                  {% if messages %}
+                  <ul class="messages">
+                    {% for message in messages %}
+                    <li>{{message}}</li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
                   <form class="forms-sample" method="post" action="{% url 'rent_insert' %}">
                     {% csrf_token %}
                     <div class="form-group">

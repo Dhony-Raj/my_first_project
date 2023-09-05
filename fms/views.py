@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Renter
+from django.contrib import messages
 
 
 def index(request):
@@ -17,6 +18,7 @@ def details(request):
         rent_obj.user_name = request.POST.get('user_name')
         
         rent_obj.save()
+        messages.success(request, 'Data inserted successfully')
 
         return redirect('home')
 
