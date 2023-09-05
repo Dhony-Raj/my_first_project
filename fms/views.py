@@ -7,7 +7,6 @@ def index(request):
     return render(request, 'admin/index.html')
 
 def details(request):
-    if request.method == 'POST':
         rent_obj = Renter()
         rent_obj.name = request.POST.get('rent_name')
         rent_obj.phone_number1 = request.POST.get('phone1_name')
@@ -20,8 +19,6 @@ def details(request):
         rent_obj.save()
 
         return redirect('home')
-    else:
-        return render(request, 'admin/index.html')
 
     
 

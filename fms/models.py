@@ -11,3 +11,4 @@ class Renter(models.Model):
     user_name = models.CharField(max_length=50, unique=True)
 
 
+
