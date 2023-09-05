@@ -21,5 +21,6 @@ from . import views as v
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('indexAdmin/', v.index),
+    path('indexAdmin/', v.index, name='home'),
+    path('test/', v.details, name='rent_insert'),
 ]
