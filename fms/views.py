@@ -5,9 +5,13 @@ from django.contrib import messages
 
 
 def index(request):
-    # Renter = Renter.objects.all().order_by('-id')
-    # renter_data = {'data':Renter}
-    return render(request, 'admin/index.html')
+    renter = Renter.objects.all().order_by('-id')
+    data = {'from':Renter}
+    return render(request, 'admin/index.html',data)
+# def index(self):
+#       renter = Renter.objects.all().order_by('-id')
+#       data = {'from':Renter}
+#       return self.render(data)
 
 def details(request):
         rent_obj = Renter()
@@ -33,7 +37,8 @@ def details(request):
 
                 rent_obj.save()
                 messages.success(request, 'Data inserted successfully')
-
+        else:
+              pass
         return redirect('home')
 
     
