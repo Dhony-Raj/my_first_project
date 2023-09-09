@@ -6,12 +6,8 @@ from django.contrib import messages
 
 def index(request):
     renter = Renter.objects.all().order_by('-id')
-    data = {'from':Renter}
-    return render(request, 'admin/index.html',data)
-# def index(self):
-#       renter = Renter.objects.all().order_by('-id')
-#       data = {'from':Renter}
-#       return self.render(data)
+    rent_data = {'data':renter}
+    return render(request, 'admin/index.html',rent_data)
 
 def details(request):
         rent_obj = Renter()
