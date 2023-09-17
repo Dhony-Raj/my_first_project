@@ -19,6 +19,7 @@ def details(request):
         rent_obj.nid_number = request.POST.get('nid_name')
         rent_obj.user_name = request.POST.get('user_name')
 
+
         data = (rent_obj.name,rent_obj.phone_number1,rent_obj.phone_number2,rent_obj.email,rent_obj.number_of_members,rent_obj.nid_number,rent_obj.user_name)
         if data:
               if len(data)==0:
