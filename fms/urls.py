@@ -23,4 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('indexAdmin/', v.index, name='home'),
     path('test/', v.details, name='rent_insert'),
+    path('edit/<slug:id>', v.edit, name='edit_index'),
+    path('update/', v.update, name='rent_update'),
 ]
