@@ -25,4 +25,5 @@ urlpatterns = [
     path('test/', v.details, name='rent_insert'),
     path('edit/<slug:id>', v.edit, name='edit_index'),
     path('update/', v.update, name='rent_update'),
+    path('delete/<slug:id>', v.delete, name='delete_index'),
 ]

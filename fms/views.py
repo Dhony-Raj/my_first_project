@@ -106,3 +106,9 @@ def update(request):
 
       return redirect('home')
 
+
+
+def delete(request,id):
+      rent_obj = Renter.objects.get(id=id)
+      rent_obj.delete() #delete from table where id=id
+      return redirect('home')

@@ -312,7 +312,7 @@
                           <td>{{i.number_of_members}}</td>
                           <td>{{i.nid_number}}</td>
                           <td>{{i.user_name}}</td>
-                          <td><a target="_blank" href="{% url 'edit_index' i.id %}">Edit </a><a>Delete</a></td>
+                          <td><a target="_blank" href="{% url 'edit_index' i.id %}">Edit </a><a target="_blank" href="{% url 'delete_index' i.id %}">Delete</a></td>
                         </tr>
                         {% endfor %}
                       </tbody>
