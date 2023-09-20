@@ -18,7 +18,8 @@ def details(request):
       nid_name = request.POST.get('nid_name')
       user_name = request.POST.get('user_name')
       data = (rent_name,phone1_name,phone2_name,email_name,nfm_name,nid_name,user_name)
-      if data:
+      renter_data = {'data': data}
+      if renter_data:
             if len(rent_name)==0:
                   messages.success(request, 'Name can not be empty')
             elif len(phone1_name)!=11:
