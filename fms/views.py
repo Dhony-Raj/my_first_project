@@ -75,8 +75,12 @@ def update(request):
       if data:
             if len(rent_name)==0:
                   messages.success(request, 'Name can not be empty')
+            elif len(phone1_name)!=0:
+                  messages.success(request, 'The phone number 1 can not be empty')
             elif len(phone1_name)!=11:
                   messages.success(request, 'The phone number 1 must be 11')
+            elif len(phone2_name)!=0:
+                  messages.success(request, 'The phone number 2 can not be empty')
             elif len(phone2_name)!=11:
                   messages.success(request, 'The phone number 2 must be 11')
             elif len(email_name)==0:

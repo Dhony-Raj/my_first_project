@@ -3,6 +3,12 @@
 {% load static %}
 
 <head>
+  <!-- script for ckeditor -->
+  <script src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+  <script src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+  <!-- script for ckeditor -->
+
+
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -250,40 +256,61 @@
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Edit Customer Entry</h4>
-                  {% if messages %}
-                  <ul class="messages">
-                    {% for message in messages %}
-                    <li>{{message}}</li>
-                    {% endfor %}
-                  </ul>
-                  {% endif %}
-                  <form class="forms-sample" method="post" action="{% url 'rent_update' %}">
+                  <h4 class="card-title">Flat Creation</h4>
+                  <form class="forms-sample" method="post" action="{% url 'flat_creation' %}">
                     {% csrf_token %}
                     <div class="form-group">
-                      <label for="exampleInputName1">Change Name</label>
-                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="rent_name" value="{{rent_data.name}}" required>
+                      <label for="exampleInputName1">Flat Number</label>
+                      <input type="number" class="form-control" id="exampleInputName1" placeholder="Flat Number" name="flat_num" value="{{rent_data.name}}" required>
                       <input type="hidden" class="form-control" id="exampleInputName1" placeholder="Name" name="rent_id" value="{{id}}" required>
-                      <label for="exampleInputPassword4">Change Phone Number 1</label>
-                      <input type="number" class="form-control" id="exampleInputPassword4" placeholder="phone number 1" name="phone1_name" value="{{rent_data.phone_number1}}" required>
+                      <label for="exampleInputPassword4">Floor Number</label>
+                      <input type="number" class="form-control" id="exampleInputPassword4" placeholder="Floor Number" name="floor_num" value="{{rent_data.phone_number1}}" required>
                       <input type="hidden" class="form-control" id="exampleInputPassword4" placeholder="phone number 1" name="rent_id" value="{{id}}" required>
-                      <label for="exampleInputPassword4">Change Phone Number 2</label>
-                      <input type="number" class="form-control" id="exampleInputPassword4" placeholder="phone number 2" name="phone2_name" value="{{rent_data.phone_number2}}" required>
+                      <label for="exampleInputPassword4">Number of Rooms</label>
+                      <input type="number" class="form-control" id="exampleInputPassword4" placeholder="Number of Rooms" name="nor_name" value="{{rent_data.phone_number2}}" required>
                       <input type="hidden" class="form-control" id="exampleInputPassword4" placeholder="phone number 2" name="rent_id" value="{{id}}" required>
-                      <label for="exampleInputEmail3">Change Email Address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email" name="email_name" value="{{rent_data.email}}" required>
+                      <label for="exampleInputEmail3">Room Size</label>
+                      <input type="number" class="form-control" id="exampleInputEmail3" placeholder="Room Size" name="room_size" value="{{rent_data.email}}" required>
                       <input type="hidden" class="form-control" id="exampleInputEmail3" placeholder="Email" name="rent_id" value="{{id}}" required>
-                      <label for="exampleInputName1">Change Numbers of family members</label>
-                      <input type="number" class="form-control" id="exampleInputName1" placeholder="members" name="nfm_name" value="{{rent_data.number_of_members}}" required>
+                      <label for="exampleInputName1">Flat Price</label>
+                      <input type="number" class="form-control" id="exampleInputName1" placeholder="Flat Price" name="flat_price" value="{{rent_data.number_of_members}}" required>
                       <input type="hidden" class="form-control" id="exampleInputName1" placeholder="members" name="rent_id" value="{{id}}" required>
-                      <label for="exampleInputName1">Change NID number</label>
-                      <input type="number" class="form-control" id="exampleInputName1" placeholder="NID number" name="nid_name" value="{{rent_data.nid_number}}" required>
-                      <input type="hidden" class="form-control" id="exampleInputName1" placeholder="NID number" name="rent_id" value="{{id}}" required>
-                      <label for="exampleInputName1">Change User Name</label>
-                      <input type="" class="form-control" id="exampleInputName1" placeholder="Name" name="user_name" value="{{rent_data.user_name}}" required>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="">Do you have any Discount</label>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="">
+                              Yes
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" checked>
+                              No
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <label for="exampleInputName1">Flat Discount</label>
+                      <input type="number" class="form-control" id="exampleInputName1" placeholder="Flat Price" name="flat_dis" value="{{rent_data.number_of_members}}" required>
+                      <input type="hidden" class="form-control" id="exampleInputName1" placeholder="members" name="rent_id" value="{{id}}" required>
+
+                      <!-- div for ckeditor -->
+                      <div class="form-group">
+                        <label for="exampleInputName1">Flat Dtails</label>
+                        <textarea name="module" id="id_content1"></textarea>
+                        <script>
+                            CKEDITOR.replace('id_content1');  // Replace the textarea with CKEditor.
+                        </script>
+                    </div>
+                    <!-- div for ckeditor -->
+
+                      <label for="exampleInputName1">Room Picture</label>
+                      <input type="file" class="form-control" id="exampleInputName1" placeholder="picture" name="room_pic" value="{{rent_data.user_name}}" required>
                       <input type="hidden" class="form-control" id="exampleInputName1" placeholder="Name" name="rent_id" value="{{id}}" required>
                     </div>
-                    <button type="submit" class="btn btn-primary me-2">Edit</button>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
 
                   </form>
                 </div>
