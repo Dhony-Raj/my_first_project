@@ -273,28 +273,35 @@
                       <input type="number" class="form-control" id="exampleInputEmail3" placeholder="Room Size" name="room_size" value="{{rent_data.email}}" required>
                       <input type="hidden" class="form-control" id="exampleInputEmail3" placeholder="Email" name="rent_id" value="{{id}}" required>
                       <label for="exampleInputName1">Flat Price</label>
-                      <input type="number" class="form-control" id="exampleInputName1" placeholder="Flat Price" name="flat_price" value="{{rent_data.number_of_members}}" required>
+                      <input type="number" class="form-control flat_price" id="exampleInputName1" placeholder="Flat Price" name="flat_price" value="{{rent_data.number_of_members}}" required>
                       <input type="hidden" class="form-control" id="exampleInputName1" placeholder="members" name="rent_id" value="{{id}}" required>
                       <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="">Do you have any Discount</label>
+                        <div class="form-group dis_check">
+                          <label for="">Do you have any Discount (yes/no)</label>
                           <div class="form-check">
                             <label class="form-check-label">
-                              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="">
+                              <input type="radio" class="radio_button" name="radio_" id="optionsRadios1" value="1">
                               Yes
                             </label>
                           </div>
                           <div class="form-check">
                             <label class="form-check-label">
-                              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" checked>
+                              <input type="radio" class="radio_button" name="radio_" id="optionsRadios2" value="0" checked>
                               No
                             </label>
                           </div>
                         </div>
                       </div>
-                      <label for="exampleInputName1">Flat Discount</label>
-                      <input type="number" class="form-control" id="exampleInputName1" placeholder="Flat Price" name="flat_dis" value="{{rent_data.number_of_members}}" required>
-                      <input type="hidden" class="form-control" id="exampleInputName1" placeholder="members" name="rent_id" value="{{id}}" required>
+                      <div>                      
+                        <label class="flat_dis">Flat Discount</label><br>
+                        <input type="number" class="form-control flat_dis" id="discount" placeholder="Flat Discount" name="flat_dis" value="{{rent_data.number_of_members}}" required>
+                        <!-- <input type="hidden" class="form-control" id="flat_dis" placeholder="members" name="rent_id" value="{{id}}" required> -->
+                      </div>
+                      <div>                      
+                        <label class="flat_discou_price">Flat Price After Discount</label><br>
+                        <input type="number" class="form-control flat_discount_price" id="discount_price" placeholder="Flat Price After Discount" name="discount_price" value="{{rent_data.number_of_members}}" required>
+                        <!-- <input type="hidden" class="form-control" id="flat_dis" placeholder="members" name="rent_id" value="{{id}}" required> -->
+                      </div>
 
                       <!-- div for ckeditor -->
                       <div class="form-group">
@@ -347,6 +354,9 @@
   <!-- Custom js for this page-->
   <script src="{% static 'design/js/file-upload.js' %}"></script>
   <!-- End custom js for this page-->
+
+  <script src="{% static 'design/js/flat.js' %}"></script>
+
 </body>
 
 </html>
