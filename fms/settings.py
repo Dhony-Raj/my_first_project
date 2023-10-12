@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'fms',
-    'ckeditor'
+    'ckeditor',
+    'flat'
 ]
 
 MIDDLEWARE = [
@@ -83,9 +84,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'fms',
         'USER': 'root',
-        "PASSWORD":'',
-        "HOST":'localhost',
-        "PORT": '3306',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
