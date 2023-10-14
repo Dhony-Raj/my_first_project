@@ -9,7 +9,7 @@ class Flat(models.Model):
     room_size = models.IntegerField() 
     flat_price = models.IntegerField()
     flat_after_discount = models.IntegerField()
-    flat_details = models.TextField()
+    flat_details = models.TextField(max_length=1000)
     room_pic = models.ImageField(upload_to="images/")
 
 # Create your models here.
