@@ -8,8 +8,8 @@ class Flat(models.Model):
     nor_name = models.IntegerField() 
     room_size = models.IntegerField() 
     flat_price = models.IntegerField()
-    flat_after_discount = models.IntegerField()
     flat_details = models.TextField(max_length=1000)
+    flat_discount = models.IntegerField()
     room_pic = models.ImageField(upload_to="images/")
 
 # Create your models here.

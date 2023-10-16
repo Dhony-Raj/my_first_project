@@ -262,19 +262,14 @@
                     <div class="form-group">
                       <label for="exampleInputName1">Flat Number</label>
                       <input type="number" class="form-control" id="exampleInputName1" placeholder="Flat Number" name="flat_num" value="{{rent_data.name}}" required>
-                      <input type="hidden" class="form-control" id="exampleInputName1" placeholder="Name" name="rent_id" value="{{id}}" required>
                       <label for="exampleInputPassword4">Floor Number</label>
                       <input type="number" class="form-control" id="exampleInputPassword4" placeholder="Floor Number" name="floor_num" value="{{rent_data.phone_number1}}" required>
-                      <input type="hidden" class="form-control" id="exampleInputPassword4" placeholder="phone number 1" name="rent_id" value="{{id}}" required>
                       <label for="exampleInputPassword4">Number of Rooms</label>
                       <input type="number" class="form-control" id="exampleInputPassword4" placeholder="Number of Rooms" name="nor_name" value="{{rent_data.phone_number2}}" required>
-                      <input type="hidden" class="form-control" id="exampleInputPassword4" placeholder="phone number 2" name="rent_id" value="{{id}}" required>
                       <label for="exampleInputEmail3">Room Size</label>
                       <input type="number" class="form-control" id="exampleInputEmail3" placeholder="Room Size" name="room_size" value="{{rent_data.email}}" required>
-                      <input type="hidden" class="form-control" id="exampleInputEmail3" placeholder="Email" name="rent_id" value="{{id}}" required>
                       <label for="exampleInputName1">Flat Price</label>
                       <input type="number" class="form-control flat_price" id="exampleInputName1" placeholder="Flat Price" name="flat_price" value="{{rent_data.number_of_members}}" required>
-                      <input type="hidden" class="form-control" id="exampleInputName1" placeholder="members" name="rent_id" value="{{id}}" required>
                       <div class="col-md-6">
                         <div class="form-group dis_check">
                           <label for="">Do you have any Discount (yes/no)</label>
@@ -295,12 +290,10 @@
                       <div>                      
                         <label class="flat_dis">Flat Discount</label><br>
                         <input type="number" class="form-control flat_dis" id="discount" placeholder="Flat Discount" name="flat_dis" value="{{rent_data.number_of_members}}" required>
-                        <!-- <input type="hidden" class="form-control" id="flat_dis" placeholder="members" name="rent_id" value="{{id}}" required> -->
                       </div>
                       <div>                      
                         <label class="flat_discou_price">Flat Price After Discount</label><br>
                         <input type="number" class="form-control flat_discount_price" id="discount_price" placeholder="Flat Price After Discount" name="discount_price" value="{{rent_data.number_of_members}}" required>
-                        <!-- <input type="hidden" class="form-control" id="flat_dis" placeholder="members" name="rent_id" value="{{id}}" required> -->
                       </div>
 
                       <!-- div for ckeditor -->
@@ -315,7 +308,6 @@
 
                       <label for="exampleInputName1">Room Picture</label>
                       <input type="file" class="form-control" id="exampleInputName1" placeholder="picture" name="room_pic" value="{{rent_data.user_name}}" required>
-                      <input type="hidden" class="form-control" id="exampleInputName1" placeholder="Name" name="rent_id" value="{{id}}" required>
                     </div>
                     <button type="submit" class="btn btn-primary me-2">Submit</button>
 
@@ -326,7 +318,7 @@
 
           </div>
         </div>
-        <!-- <div class="col-lg-12 stretch-card">
+        <div class="col-lg-12 stretch-card">
           <div class="card">
             <div class="card-body">
               <h4 class="card-title">Renter's Information</h4>
@@ -341,23 +333,25 @@
                       <th>Room Size</th>
                       <th>Flat Price</th>
                       <th>Flat Discount</th>
-                      <th>Flat Price After Discount</th>
                       <th>Flat Dtails</th>
                       <th>Room Picture</th>
                       <th>Action</th>
                   </thead>
                    <tbody>
-                    {% for i in data %}
+                    {% for i in flat_data %}
                     <tr class="table-info">
                       <td>{{ forloop.counter }}</td>
-                      <td>{{i.name}}</td>
-                      <td>{{i.phone_number1}}</td>
-                      <td>{{i.phone_number2}}</td>
-                      <td>{{i.email}}</td>
-                      <td>{{i.number_of_members}}</td>
-                      <td>{{i.nid_number}}</td>
-                      <td>{{i.user_name}}</td>
-                      <td><a target="_blank" href="{% url 'edit_flat_index' i.id %}">Edit </a><a target="_blank" href="{% url 'delete_flat_index' i.id %}">Delete</a></td>
+                      <td>{{i.flat_num}}</td>
+                      <td>{{i.floor_num}}</td>
+                      <td>{{i.nor_name}}</td>
+                      <td>{{i.room_size}}</td>
+                      <td>{{i.flat_price}}</td>
+                      <td>{{i.flat_discount}}</td>
+                      <td>{{i.module}}</td>
+                      <td>
+                        <img src="{{ i.images.url }}" />
+                      </td>
+                      
                     </tr>
                     {% endfor %}
                   </tbody> 
@@ -365,7 +359,7 @@
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
