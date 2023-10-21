@@ -1,12 +1,16 @@
 from django.shortcuts import render,HttpResponse,redirect
-from .models import Flat
+from fms.models import Renter
+from .models import Flat_create
+
+
 
 def flat(request):
-    flat = Flat.objects.all().order_by('-id')
-    data = {'flat_data':flat}
-    return render(request, './flat.html', data)
-
+            all_details = Renter.objects.all().order_by('-id')
+            flat = Flat_create.objects.all().order_by('-id')
+            data = {'flat_data':flat,'detail_data':all_details}
+            return render(request, './flat.html', data)
 def input(request):
+    rent_id_id  = request.POST.get('rent_id_id')
     flat_num = request.POST.get('flat_num')
     floor_num = request.POST.get('floor_num')
     nor_name = request.POST.get('nor_name')
@@ -16,7 +20,10 @@ def input(request):
     module = request.POST.get('module')
     room_pic = request.FILES.get('room_pic')
 
-    flat_obj = Flat()
+
+    renter = Renter.objects.get(pk=rent_id_id)
+    flat_obj = Flat_create()
+    flat_obj.rent_id_id = renter
     flat_obj.flat_num = flat_num
     flat_obj.floor_num = floor_num
     flat_obj.nor_name = nor_name
@@ -29,5 +36,4 @@ def input(request):
     flat_obj.save()
 
     return redirect('home')
-
 # Create your views here.

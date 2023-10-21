@@ -26,5 +26,5 @@ urlpatterns = [
     path('edit/<slug:id>', v.edit, name='edit_index'),
     path('update/', v.update, name='rent_update'),
     path('delete/<slug:id>', v.delete, name='delete_index'),
-    path('flat/', include('flat.urls')),
+    path('flat/', include('flat_creation.urls')),
 ]

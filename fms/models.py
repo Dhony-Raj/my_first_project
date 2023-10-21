@@ -10,6 +10,8 @@ class Renter(models.Model):
     nid_number = models.CharField(max_length=20)
     user_name = models.CharField(max_length=50, unique=True)
 
+    # Create your models here.
+
 
 
 

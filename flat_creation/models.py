@@ -1,8 +1,9 @@
 from django.db import models
-from fms.models import Renter
+from fms.models import Renter 
 
-class Flat(models.Model):
+class Flat_create(models.Model):
     id = models.AutoField(primary_key=True)
+    rent_id_id = models.ForeignKey(Renter, on_delete=models.CASCADE)
     flat_num = models.IntegerField()
     floor_num = models.IntegerField()
     nor_name = models.IntegerField() 
@@ -10,6 +11,7 @@ class Flat(models.Model):
     flat_price = models.IntegerField()
     flat_details = models.TextField(max_length=1000)
     flat_discount = models.IntegerField()
-    room_pic = models.ImageField(upload_to="images/")
+    room_pic = models.ImageField(null= True, blank=True, upload_to="images/")
+
 
 # Create your models here.

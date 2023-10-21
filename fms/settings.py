@@ -29,6 +29,9 @@ SECRET_KEY = 'django-insecure-wift2y%^1&n$a8#98n*ud*7(9)x@imz5u(hi)q07plibgmhgmo
 DEBUG = True
 
 ALLOWED_HOSTS = []
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Application definition
@@ -42,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'fms',
     'ckeditor',
-    'flat'
+    'flat_creation',
 ]
 
 MIDDLEWARE = [

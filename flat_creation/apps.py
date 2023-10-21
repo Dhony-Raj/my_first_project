@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class FlatConfig(AppConfig):
+class FlatCreationConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'flat'
+    name = 'flat_creation'
