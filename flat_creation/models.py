@@ -3,7 +3,6 @@ from fms.models import Renter
 
 class Flat_create(models.Model):
     id = models.AutoField(primary_key=True)
-    rent_id_id = models.ForeignKey(Renter, on_delete=models.CASCADE)
     flat_num = models.IntegerField()
     floor_num = models.IntegerField()
     nor_name = models.IntegerField() 
