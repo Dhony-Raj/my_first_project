@@ -5,8 +5,8 @@ from .models import Flat_create
 
 def flat(request):
             all_cat = Category.objects.all().order_by('-id')
-            # flat = Flat_create.objects.all().order_by('-id')
-            data = {'cat_data':all_cat}
+            flat = Flat_create.objects.all().order_by('-id')
+            data = {'cat_data':all_cat, 'flat': flat}
             return render(request, 'admin/flat.html', data)
 def input(request):
     rent_id  = request.POST.get('rent_id')
@@ -20,7 +20,9 @@ def input(request):
     room_pic = request.FILES.get('room_pic')
 
 
+    category = Category.objects.get(pk = rent_id)
     flat_obj = Flat_create()
+    flat_obj.rent_id = category
     flat_obj.flat_num = flat_num
     flat_obj.floor_num = floor_num
     flat_obj.nor_name = nor_name

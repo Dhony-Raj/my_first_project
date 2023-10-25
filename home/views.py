@@ -6,4 +6,7 @@ def index(request):
     cat = {'all_cat':data}
     return render (request , 'user/home.html', cat)
 
+def index1(request):
+    return render (request , 'user/product_list.html')
+
 # Create your views here.

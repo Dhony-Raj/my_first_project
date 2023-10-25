@@ -1,8 +1,10 @@
 from django.db import models
+from category.models import Category
 from fms.models import Renter 
 
 class Flat_create(models.Model):
     id = models.AutoField(primary_key=True)
+    rent_id = models.ForeignKey(Category, on_delete=models.CASCADE, default=True)
     flat_num = models.IntegerField()
     floor_num = models.IntegerField()
     nor_name = models.IntegerField() 

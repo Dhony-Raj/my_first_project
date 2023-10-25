@@ -23,5 +23,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', v.index, name='home_index'),
-    # path('input/', v.input, name='flat_creation')
+    path('product/<slug:id>', v.index1, name = 'product_list')
 ]
