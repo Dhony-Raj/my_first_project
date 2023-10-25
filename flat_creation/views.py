@@ -1,13 +1,13 @@
 from django.shortcuts import render,HttpResponse,redirect, get_object_or_404
-from fms.models import Renter
+from category.models import Category
 from .models import Flat_create
 
 
 def flat(request):
-            all_details = Renter.objects.all().order_by('-id')
-            flat = Flat_create.objects.all().order_by('-id')
-            data = {'detail_data':all_details, 'flat_data':flat}
-            return render(request, './flat.html', data)
+            all_cat = Category.objects.all().order_by('-id')
+            # flat = Flat_create.objects.all().order_by('-id')
+            data = {'cat_data':all_cat}
+            return render(request, 'admin/flat.html', data)
 def input(request):
     rent_id  = request.POST.get('rent_id')
     flat_num = request.POST.get('flat_num')

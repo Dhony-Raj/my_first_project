@@ -20,7 +20,8 @@ from django.urls import path,include
 from . import views as v
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('category/', include('category.urls')),
+    path('', include('home.urls')),
     path('indexAdmin/', v.index, name='home'),
     path('test/', v.details, name='rent_insert'),
     path('edit/<slug:id>', v.edit, name='edit_index'),

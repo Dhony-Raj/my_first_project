@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'fms',
     'ckeditor',
     'flat_creation',
+    'category',
 ]
 
 MIDDLEWARE = [
