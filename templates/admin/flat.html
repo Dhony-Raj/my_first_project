@@ -342,12 +342,13 @@
                       <th>Flat Discount</th>
                       <th>Flat Dtails</th>
                       <th>Room Picture</th>
+                      <th>flat discount price</th>
                       <!-- <th>Action</th> -->
                   </thead>
                    <tbody>
-                    {% for i in flat_data %}
+                    {% for i in flat %}
                     <tr class="table-info">
-                      <td>{{ forloop.counter }}</td>
+                      <td>{{forloop.counter }}</td>
                       <td>{{i.flat_num}}</td>
                       <td>{{i.floor_num}}</td>
                       <td>{{i.nor_name}}</td>
@@ -358,6 +359,7 @@
                       <td>
                         <img src="{{ i.images.url }}" />
                       </td>
+                      <td>{{i.flat_discout_price}}</td>
                       
                     </tr>
                     {% endfor %}
