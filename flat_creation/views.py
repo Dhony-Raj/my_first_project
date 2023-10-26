@@ -10,6 +10,7 @@ def flat(request):
             return render(request, 'admin/flat.html', data)
 def input(request):
     rent_id  = request.POST.get('rent_id')
+    flat_name = request.POST.get('flat_name')
     flat_num = request.POST.get('flat_num')
     floor_num = request.POST.get('floor_num')
     nor_name = request.POST.get('nor_name')
