@@ -23,5 +23,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', v.flat, name='home'),
-    path('input/', v.input, name='flat_creation')
+    path('index/', v.input, name='flat_creation')
 ]

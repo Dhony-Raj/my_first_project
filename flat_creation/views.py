@@ -20,7 +20,8 @@ def input(request):
     room_pic = request.FILES.get('room_pic')
 
 
-    category = Category.objects.get(pk = rent_id)
+
+    category = get_object_or_404(Category, pk=rent_id)
     flat_obj = Flat_create()
     flat_obj.rent_id = category
     flat_obj.flat_num = flat_num
@@ -35,4 +36,6 @@ def input(request):
     flat_obj.save()
 
     return redirect('home')
+                
+            
 # Create your views here.
