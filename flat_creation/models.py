@@ -13,6 +13,7 @@ class Flat_create(models.Model):
     flat_details = models.TextField(max_length=1000)
     flat_discount = models.IntegerField()
     room_pic = models.ImageField(null= True, blank=True, upload_to="images/")
+    flat_discout_price = models.IntegerField(default=True)
 
 
 # Create your models here.

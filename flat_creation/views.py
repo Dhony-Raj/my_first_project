@@ -18,6 +18,7 @@ def input(request):
     flat_discount = request.POST.get('flat_dis')
     module = request.POST.get('module')
     room_pic = request.FILES.get('room_pic')
+    discount_price = request.FILES.get('discount_price')
 
 
 
@@ -32,6 +33,7 @@ def input(request):
     flat_obj.flat_discount = flat_discount
     flat_obj.module = module
     flat_obj.room_pic = room_pic
+    flat_obj.discount_price = discount_price
 
     flat_obj.save()
 

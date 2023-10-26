@@ -1140,25 +1140,25 @@
               <div class="tab-pane active " id="grid-container">
                 <div class="category-product">
                   <div class="row">
-                    {% for i,j in all_course %}
+                    {% for i in all_flat %}
                     <div class="col-sm-6 col-md-4 wow fadeInUp">
                       <div class="products">
                         <div class="product">
                           <div class="product-image">
-                            <div class="image"> <a href="{% url 'product_details' i.id %}"><img src="{{ i.image.url }}"
+                            <div class="image"> <a href="{% url 'product_list' i.id %}"><img src="{{ i.image.url }}"
                                   alt=""></a> </div>
                             <!-- /.image -->
 
-                            <div class="tag new"><span>new</span></div>
+                            <div class="tag new"><span>{{i.flat_discount}}</span></div>
                           </div>
                           <!-- /.product-image -->
 
                           <div class="product-info text-left">
-                            <h3 class="name"><a href="detail.html">{{i.name}}</a></h3>
+                            <h3 class="name"><a href="detail.html">{{i.flat_num}}</a></h3>
                             <div class="rating rateit-small"></div>
                             <div class="description"></div>
-                            <div class="product-price"> <span class="price"> {{j}} </span> <span
-                                class="price-before-discount">{{i.fee}}</span> </div>
+                            <div class="product-price"> <span class="price"> {{i.flat_price}}</span> <span
+                                class="price-before-discount">{{i.flat_discout_price}}</span> </div>
                             <!-- /.product-price -->
 
                           </div>
