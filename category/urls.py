@@ -22,6 +22,6 @@ from django.conf import settings
 from django.conf.urls.static import static 
 
 urlpatterns = [
-    path('index/', v.category, name='home'),
+    path('index/', v.category, name='home1'),
     path('input/', v.cat_input, name='cat_input')
 ]

@@ -23,9 +23,9 @@ def input(request):
 
 
 
-    category = get_object_or_404(Category, pk=rent_id)
+    # category = get_object_or_404(Category, pk=rent_id)
     flat_obj = Flat_create()
-    flat_obj.rent_id = category
+    flat_obj.rent_id_id = rent_id
     flat_obj.flat_num = flat_num
     flat_obj.floor_num = floor_num
     flat_obj.nor_name = nor_name

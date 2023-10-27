@@ -257,14 +257,14 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Flat Creation</h4>
-                  <form class="forms-sample" method="post" action="{% url 'flat_creation'%}" enctype="multipart/form-data">
+                  <form class="forms-sample" method="post" action="{% url 'flat_creation' %}" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">
                       <label for="exampleInputName1">Flat Category</label>
-                      <select class="form-control" id="exampleInputName1" name="">
+                      <select class="form-control" id="exampleInputName1" name="rent_id">
                         <option>Select Category</option>
                         {% for i in cat_data %}
-                        <option>{{i.cat_num}}</option>
+                        <option value="{{i.id}}">{{i.cat_num}}</option>
                         {% endfor %}
                       </select><br>
                       <label for="exampleInputName1">Flat Name</label>

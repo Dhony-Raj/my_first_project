@@ -22,7 +22,7 @@ from . import views as v
 urlpatterns = [
     path('category/', include('category.urls')),
     path('', include('home.urls')),
-    path('indexAdmin/', v.index, name='home'),
+    path('indexAdmin/', v.index, name='home2'),
     path('test/', v.details, name='rent_insert'),
     path('edit/<slug:id>', v.edit, name='edit_index'),
     path('update/', v.update, name='rent_update'),
