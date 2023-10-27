@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.conf import settings
+from django.conf.urls.static import static
 
 from . import views as v
 
@@ -28,4 +30,5 @@ urlpatterns = [
     path('update/', v.update, name='rent_update'),
     path('delete/<slug:id>', v.delete, name='delete_index'),
     path('flat/', include('flat_creation.urls')),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
