@@ -13,7 +13,7 @@ def product_list(request,id):
     flat_obj = {'all_flat':flat_obj}
     return render (request , 'user/product_list.html', flat_obj)
 
-def details(request):
+def details(request,id):
     flat_obj = Flat_create.objects.get(id=id)
     flat_obj = {'all_flat1':flat_obj}
     return render(request, 'user/detail.html', flat_obj)

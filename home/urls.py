@@ -24,5 +24,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', v.index, name='home_index'),
     path('product/<int:id>', v.product_list, name = 'product_list'),
-    path('details/<int:id>', v.details , name = 'product_details')
+    path('details/<int:id>', v.details, name = 'product_details' ),
 ]
