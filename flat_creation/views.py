@@ -19,7 +19,7 @@ def input(request):
     flat_discount = request.POST.get('flat_dis')
     flat_details = request.POST.get('flat_details')
     room_pic = request.FILES.get('room_pic')
-    discount_price = request.FILES.get('discount_price')
+    flat_dis = request.FILES.get('flat_dis')
 
 
 
@@ -35,7 +35,7 @@ def input(request):
     flat_obj.flat_discount = flat_discount
     flat_obj.flat_details = flat_details
     flat_obj.room_pic = room_pic
-    flat_obj.discount_price = discount_price
+    flat_obj.flat_dis = flat_dis
 
     flat_obj.save()
 
@@ -59,10 +59,11 @@ def update1(request):
     flat_discount = request.POST.get('flat_dis')
     flat_details = request.POST.get('flat_details')
     room_pic = request.FILES.get('room_pic')
-    discount_price = request.FILES.get('discount_price')
+    flat_dis = request.FILES.get('flat_dis')
 
     flat_obj = Flat_create.objects.get(id=rent_id)
     flat_obj.flat_name = flat_name
+    flat_obj.flat_num = flat_num
     flat_obj.floor_num = floor_num
     flat_obj.nor_name = nor_name
     flat_obj.room_size = room_size
@@ -70,7 +71,7 @@ def update1(request):
     flat_obj.flat_discount = flat_discount
     flat_obj.flat_details = flat_details
     flat_obj.room_pic = room_pic
-    flat_obj.discount_price = discount_price
+    flat_obj.flat_dis = flat_dis
 
     flat_obj.save()
     return redirect('home')

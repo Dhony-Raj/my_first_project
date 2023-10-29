@@ -268,7 +268,7 @@
                         {% endfor %}
                       </select><br>
                       <label for="exampleInputName1">Flat Name</label>
-                      <input type="number" class="form-control" id="exampleInputName1" placeholder="Flat Number" name="flat_ame"  required>
+                      <input type="" class="form-control" id="exampleInputName1" placeholder="Flat Number" name="flat_name"  required>
                       <label for="exampleInputName1">Flat Number</label>
                       <input type="number" class="form-control" id="exampleInputName1" placeholder="Flat Number" name="flat_num"  required>
                       <label for="exampleInputPassword4">Floor Number</label>
@@ -298,11 +298,11 @@
                       </div>
                       <div>                      
                         <label class="flat_dis">Flat Discount</label><br>
-                        <input type="number" class="form-control flat_dis" id="discount" placeholder="Flat Discount" name="flat_dis" value="{{rent_data.number_of_members}}" required>
+                        <input type="number" class="form-control flat_dis" id="discount" placeholder="Flat Discount" name="flat_dis"  required>
                       </div>
                       <div>                      
                         <label class="flat_discou_price">Flat Price After Discount</label><br>
-                        <input type="number" class="form-control flat_discount_price" id="discount_price" placeholder="Flat Price After Discount" name="discount_price" value="{{rent_data.number_of_members}}" required>
+                        <input type="number" class="form-control flat_discount_price" id="discount_price" placeholder="Flat Price After Discount" name="discount_price"  required>
                       </div>
 
                       <!-- div for ckeditor -->
@@ -316,7 +316,7 @@
                     <!-- div for ckeditor -->
 
                       <label for="exampleInputName1">Room Picture</label>
-                      <input type="file" class="form-control" id="exampleInputName1" placeholder="picture" name="room_pic" value="{{rent_data.user_name}}" required>
+                      <input type="file" class="form-control" id="exampleInputName1" placeholder="picture" name="room_pic" required>
                     </div>
                     <button type="submit" class="btn btn-primary me-2">Submit</button>
 
