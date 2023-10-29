@@ -12,6 +12,6 @@ def cat_input(request):
 
     cat_obj.save()
 
-    return redirect('home')
+    return redirect('home1')
 
 # Create your views here.
