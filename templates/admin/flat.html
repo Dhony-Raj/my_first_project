@@ -346,7 +346,7 @@
                       <th>Flat Dtails</th>
                       <th>Room Picture</th>
                       <th>Flat discount price</th>
-                      <th>Action</th>
+                      <!-- <th>Action</th> -->
                       
                   </thead>
                    <tbody>
@@ -366,7 +366,6 @@
                         <img src="{{ i.room_pic.url }}" />
                       </td>
                       <td>{{i.flat_discout_price}}</td>
-                      <td><a target="_blank" href="{% url 'edit_flat_index' i.id %}">Edit </a><a target="_blank" href="{% url 'delete_flat_index' i.id %}">Delete</a></td>
                     </tr>
                     {% endfor %}
                   </tbody> 
