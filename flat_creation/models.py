@@ -11,10 +11,10 @@ class Flat_create(models.Model):
     nor_name = models.IntegerField() 
     room_size = models.IntegerField() 
     flat_price = models.IntegerField()
-    price_discount = models.IntegerField(blank=True)
+    price_discount = models.IntegerField(blank=True, null=True)
     flat_details = models.TextField(max_length=1000)
     room_pic = models.ImageField(null= True, blank=True, upload_to="images/")
-    dis_flat = models.IntegerField(blank=True)
+    dis_flat = models.IntegerField(blank=True, null=True)
 
 
 

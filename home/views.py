@@ -5,7 +5,13 @@ from itertools import zip_longest
 
 def index(request):
     data = Category.objects.all()
-    cat = {'all_cat':data}
+    data2 = Flat_create.objects.order_by('-pk')[:5]
+    data3 = Flat_create.objects.filter(rent_id_id=1).order_by('-pk')[:4]
+    data4 = Flat_create.objects.order_by('-dis_flat')[:4]
+    length = len(data3)
+    length = length !=0
+    print("asdasdasdasdasdasdasdasdasdasdadasdasdadasdasdasdd",length)
+    cat = {'all_cat':data, 'data2':data2, 'data3':data3, 'data4':data4, 'size1':length}
     return render (request , 'user/home.html', cat)
 
 def product_list(request,id):
